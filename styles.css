@@ -1,0 +1,30 @@
+#vis2 {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Ensure it takes the full height */
+    margin: 0 auto; /* Center the container */
+}
+
+body {
+    padding-left: 100px;   
+    padding-right: 100px;  
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f0f0f0; 
+
+}
+
+.content {
+    font-family: 'Times New Roman', Times, serif; 
+    text-align: center;
+}
+
+.pure-g {
+    margin-bottom: 100px; /* Adjust the value to set the desired spacing */
+}
+
+#emphasis {
+    font-weight: bold;   
+    /* font-style: italic;    */
+    color: red;         
+  }

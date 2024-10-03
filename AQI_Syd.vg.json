@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Air Quality Index in Sydney During December 2019.",
+  "width": 600,
+  "height": 350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/adamtrann/3179_assignment2/refs/heads/main/AQI_Syd.csv"
+  },
+  "config": {
+    "background": "#f0f0f0"  
+  },
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "axis": {
+            "labelAngle": 45,
+            "title": "Date"
+          }
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "axis": {
+            "title": "PM2.5 µg/m3"
+          }
+        },
+        "color": {
+          "field": "Station",
+          "type": "nominal",
+          "legend": {"title": "Station"}
+        },
+        "opacity": {
+          "condition": {
+            "param": "station_highlight",
+            "value": 1
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "date", "type": "temporal", "title": "Date"},
+          {"field": "value", "type": "quantitative", "title": "PM2.5 µg/m3"},
+          {"field": "Station", "type": "nominal", "title": "Station"}
+        ]
+      },
+      "params": [
+        {
+          "name": "station_highlight",
+          "select": {"type": "point", "fields": ["Station"]},
+          "bind": "legend"
+        }
+      ]
+    }
+  ]
+}
